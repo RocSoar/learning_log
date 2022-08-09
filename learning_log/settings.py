@@ -133,6 +133,7 @@ LOGIN_URL = "users:login"
 
 # Heroku 设置
 import django_heroku
+import os
 
 django_heroku.settings(locals())
 
