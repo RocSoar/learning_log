@@ -1,0 +1,22 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+<h3>{{ pizza }}</h3>
+{% endblock page_header %}
+
+{% block content %}
+
+{% for topping in toppings %}
+<div class="card mb-3">
+  <h5 class="card-header">
+    {{ topping.date_added|date:'M d, Y H:i' }}
+  </h5>
+  <div class="card-body">
+    {{ topping.topping|linebreaks }}
+  </div>
+</div>
+{% empty %}
+<p>There are no toppings for this pizza yet.</p>
+{% endfor %}
+
+{% endblock content %}
